@@ -17,7 +17,7 @@ test:
 
 production:
   adapter: mysql
-  encoding: utf-8
+  encoding: utf8
   reconnect: false
   database: doogenfind_production
   pool: 5
