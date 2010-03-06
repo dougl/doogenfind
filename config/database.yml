@@ -19,7 +19,7 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: doogenfind_production
+  database: doogenfindbase
   pool: 5
   username: douglilla
   password: 88pf6Qj
