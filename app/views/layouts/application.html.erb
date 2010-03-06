@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Doogenfind</title>
+	<%= stylesheet_link_tag 'doog' %>
+	<%= javascript_include_tag :defaults %>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+		<h1>Doogenfind: Sharing links about music</h1>
+		</div>
+		<p id="strip">
+		MUSIC = LIFE
+			</p>
+		<p id ="extend">&bull;
+			</p>
+			<div id="content">
+				<div class = "gutter">
+					
+					<div id="login_logout">
+						<% if @current_user %>
+						logged in as:
+						<%= @current_user.login %>
+						<em><%= link_to "(Logout)", session_path,
+						 		:method => :delete %></em>
+					<% else %>
+					<em>Not logged in.</em>
+					<%= link_to 'Login', new_session_path %>
+					<% end %>
+				</div>
+					
+					
+					
+					<%= image_tag  ("df_logo.png") %>
+					
+		<% unless flash[:notice].blank? %>
+		<div id="notification"><%= flash[:notice] %></div>
+		<% end %>
+		<%= yield %>
+		</div>
+</div>
+
+<div id ="sidebar">
+		<div class = "gutter">
+			<ul id ="navigation">
+				<li><%= link_to 'All Shares', shares_path %></li>
+				<li><%= link_to 'Popular Shares', popular_shares_path%></li>
+				<li><%= link_to 'Upcoming Shares', bin_shares_path %></li>
+				<li><%= link_to 'Submit a New Share', new_share_path %></li>
+			</ul>
+		
+			<p>
+					<% tag_cloud @tags, %w(css1 css2 css3 css4) do |tag, css_class| %>
+					    <%= link_to tag, tag_path(:id =>tag.name), :class => css_class %>
+			  <% end %>
+				</p>
+				<p>&nbsp;</p>
+					<h2>About this application</h2>
+					<p>This site is a Ruby on Rails application devoted to sharing links about music. It is NOT an application for sharing actual music files. I strongly believe that musicians be paid for their work and I would never distribute another musician's music on the web without their explicit consent.</p>
+				</div>
+			</div>
+		</div>
+	
+			
+			<div id="footer">
+				<p>::: Built by Doug Lilla ::: <br />Special thanks to my mentors: Patrick Lenz, Dan Cederholm and Andy Budd</p>
+				</div>
+			</div><!-- end wrapper -->
+
+			</body>
+</html>

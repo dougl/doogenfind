@@ -1,0 +1,66 @@
+<h2>
+	<span id ="vote_score">
+		Score: <%= @share.votes.size %>
+	</span>
+	<%= @share.title %>
+</h2>
+<ul id ="vote_history">
+	<% if @share.votes.empty? %>
+	<em>No votes yet!</em>
+	<% else %>
+	<%= render :partial => 'votes/vote',
+	:collection => @share.votes.latest %>
+	<% end %>
+</ul>
+<p>
+	<%= @share.description %>
+</p>
+
+<p class ="submitted_by">
+	Submitted by:
+	<span><%= link_to @share.user.login, @share.user %></span>
+</p>
+<p>
+	<%= link_to @share.link, @share.link %>
+</p>
+
+<% unless @share.tag_list.empty? %>
+<p class ="tags">
+	<strong>Tags:</strong>
+	<%= render :partial => @share.tags %>
+</p>
+<% end %>
+
+<% if logged_in? %>
+<div id = "vote_form">
+	<% form_remote_tag :url => share_votes_path(@share) do %>
+		<%= submit_tag 'Vote for it'%>
+		<% end %>
+</div>
+	<h2>Comments</h2>
+
+				<div id="comments">
+
+					<%= error_messages_for 'comment' %>
+
+					<%= render :partial => @share.comments %>
+				</div>
+
+
+				<% remote_form_for [@share, Comment.new] do |f| %>
+
+				<p>
+					<%= f.label :body, "New comment:" %><br />
+					<%= f.text_area :body %>
+				</p>
+				<p><%= f.submit "Add Comment" %></p>
+				<% end %>
+			</div>
+			<% else %>
+			<p>
+				<em>You would be able to vote for, submit a comment and view comments on this share if you were
+					<%= link_to 'logged in', new_session_path %>
+				</em>
+			</p>
+
+			<% end %>

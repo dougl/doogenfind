@@ -1,0 +1,19 @@
+require 'test_helper'
+
+class UserTest < ActiveSupport::TestCase
+  
+  def test_should_have_a_shares_association
+   assert_equal 2, users(:patrick).shares.size
+   assert_equal shares(:two), users(:patrick).shares.first
+  end
+  
+  def test_should_have_a_votes_association
+    assert_equal 1, users(:patrick).votes.size
+    assert_equal votes(:two), users(:john).votes.first
+  end
+  
+  def test_shares_voted_on_association
+    assert_equal [shares(:one) ],
+    users(:patrick).shares_voted_on
+  end
+end

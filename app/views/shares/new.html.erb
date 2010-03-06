@@ -1,0 +1,30 @@
+<% form_for @share do |f| %>
+<%= error_messages_for 'share' %>
+
+    
+
+	<p>
+		title:<br />
+		<%= f.text_field :title %>
+    </p>
+
+    <p>
+	  	link:<br />
+	    <%= f.text_field :link %>
+	</p>
+	
+	<p>
+		description<br />
+		<%= f.text_area :description %>
+	</p>
+	
+	<p>
+		tags:<br />
+		<%= f.text_field :tag_list %>
+	</p>
+	
+	<p>
+		<%= f.submit 'Save New Share' %>
+	</p>
+	<% end %>
+	

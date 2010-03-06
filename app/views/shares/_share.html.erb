@@ -1,0 +1,8 @@
+<% div_for(share) do %>
+	<h3><%= link_to share.title, share %></h3>
+	<p>
+		Submitted by: <%= share.user.login %>
+		| Score: <%= share.votes_count %><br />
+		Tags: <%= share.tag_list %>
+	</p>
+	<% end %>

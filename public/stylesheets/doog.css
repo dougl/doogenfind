@@ -1,0 +1,302 @@
+body {
+	margin: 0;
+	padding:  0;
+	font-family: Verdana, sans-serif;
+	font-size: small;
+	background: #d2d2a6;
+	min-height:100%;
+	
+	}
+
+
+/* layout */
+
+#wrapper {
+	min-width: 500px;
+	max-width: 1500px;
+	min-height: 100%;
+	height:auto!important;
+}
+
+#content {
+	float: left;
+	width: 70%;
+	font-size: 95%;
+	line-height: 1.5em;
+	color: #47110a;
+	overflow: hidden;
+}
+
+
+#content p {
+	width: 700px;
+}
+
+* html #content  {
+	min-height:100%;
+}
+
+#content a {
+	color: #3a563f;
+	text-decoration: none;
+}
+
+#content a:hover {
+	color: #ba6118;
+}
+
+#content h2 {
+	color: #433f55;
+	clear: both;
+	margin: 0;
+	padding: 30px 0 0 0;
+}
+
+#content h3 {
+	color: #414973;
+}
+
+
+#sidebar {
+	float: right;
+	width: 28%;
+}
+
+#footer {
+	float: right;
+	width: 27%;
+	clear: both;
+	background: #c3b14b;
+}
+
+#footer p {
+	margin:  0;
+	padding: 15px;
+	font-size: 90%;
+	color:  #47110a;
+}
+
+
+/* header */
+
+#header {
+	border-bottom: 4px solid #e1451d;
+	background: #47110a url(doog_bg.gif) left;
+	border-color: #e1451d;
+}
+
+#header h1 {
+	margin: 0;
+	padding: 25px;
+	font-family: Verdana, sans-serif;
+	font-size: 150%;
+	color: #fff;
+	background: url(doogenlogo.png) no-repeat left;
+}
+
+
+/* strip */
+#strip {
+	margin: 0;
+	padding: 10px;
+	font-size: 90%;
+	color: #47110a;
+	text-align: center;
+	background: #c3b14b;
+	font-weight: bold;
+	letter-spacing: .5em;
+}
+
+/*extender to fit gradient */
+#extend {
+	margin: 0;
+	padding: 10px;
+	font-size: 90%;
+	color: #cccca1;
+	text-align: center;
+	line-height: 4em;
+	background: #d2d2a6 url(doog_bg_low.gif) top repeat-x;
+}
+
+/* gutters */
+#content .gutter {
+	padding: 25px;
+
+}
+
+#sidebar .gutter {
+	padding: 15px;
+}
+
+
+#sidebar .gutter p a {
+	color:#3a563f;
+	text-decoration: none;
+}
+
+/* notification */
+#notification {
+	border-style: dotted;
+	border-color: #414973;
+	margin: 10px 0;
+	padding: 5px;
+	width: 25%;
+}
+
+
+.fieldWithErrors {
+	border: 3px solid #b11c0f;
+	width: 19.5em;
+}
+
+/* scoreboard */
+#vote_score {
+	float:  right;
+	color: #d05446;
+}
+
+#vote_form {
+	margin: 10px 0;
+}
+
+#vote_form input {
+	padding: 3px 5px;
+	border: 2px solid #605f2f;
+	background-color:#f6f9f3 ;
+	text-decoration: none;
+	color: #605f2f;
+}
+
+#vote_form input:hover {
+	background-color: #d3deb6;
+}
+
+/* sidebar and nav menu*/
+#sidebar {
+	color: #47110a;
+}
+
+#sidebar h2 {
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+#navigation {
+	list-style: none;
+	margin: 0 0 30px 0;
+	padding: 10px 0;
+	text-align: left;
+	text-transform: uppercase;
+	
+	}
+
+#navigation li a{
+	color: #fff;
+	display: block;
+	padding-left: 10px;
+	text-decoration: none;
+	line-height: 3em;
+	border-bottom: 1px solid #fff;
+	background-color: #47110a;
+}
+
+#navigation li a:hover {
+	color: #ba6118;
+}
+
+/* voting history */
+
+#vote_history {
+	padding: 5px;
+	margin: 10px 0 20px 0;
+	list-style: none;
+	border: 3px solid #47110a;
+	background-color: #eecf9f;
+	float:  right;
+	color:  #47110a;
+	font-size: smaller;
+}
+
+/* Login Logout */
+#login_logout {
+	float: right;
+}
+
+/* share display */
+.share {
+	float: left;
+	width: 50%;
+}
+
+.share h3 {
+	margin-bottom: 0;
+}
+
+.share p {
+	color: #666;
+}
+
+
+/* comments */
+#comments {
+	margin: 0;
+}
+
+/* tags */
+.tags a{
+	padding: 0 3px;
+}
+	
+
+/* Hacks */
+/* Hide from IE5/Mac */
+* html #footer {
+	height: 1%;
+}
+/* End hide from IE5/Mac */
+
+
+
+/* tag cloud */
+.css1 { 
+font-size: 1.0em; 
+}
+
+.css1 a {
+	color:#3a563f;
+	text-decoration: none;
+}
+
+
+.css2 { 
+  font-size: 1.2em; 
+}
+
+.css2 a {
+	color:#3a563f;
+	text-decoration: none;
+}
+
+.css3 { 
+font-size: 1.4em; 
+}
+
+.css3 a {
+	color:#3a563f;
+	text-decoration: none;
+}
+
+.css4 a {
+	color:#3a563f;
+	text-decoration: none;
+}
+
+.css4 a:hover {
+	color: #19251b;
+	text-decoration: underline;
+}
+
+
+.css4 { font-size: 1.6em; }
+  
+  

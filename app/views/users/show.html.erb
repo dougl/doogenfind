@@ -1,0 +1,9 @@
+<h2>Shares submitted by <%= @user.name %></h2>
+<div id = "shares_submitted">
+	<%= render :partial => @shares_submitted %>
+</div>
+
+<h2>Shares voted for by <%= @user.name %></h2>
+<div id="shares_voted_on">
+	<%= render :partial => @shares_voted_on %>
+</div>

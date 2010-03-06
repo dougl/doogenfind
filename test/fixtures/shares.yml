@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+    title: Bill Frisell website
+    link: http://www.billfrisell.com/
+    user: patrick
+    votes_count: 2
+
+two:
+    title: Greenleaf Music
+    link: http://greenleafmusic.com/blog/
+    user: patrick
+    votes_count: 0
+  
+promoted:
+    title: What is a Debugger?
+    link: http://enwikipedia.org/wiki/Debugger/
+    user: john
+    votes_count: 5
+
+
+    
