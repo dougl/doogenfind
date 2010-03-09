@@ -1,7 +1,7 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
-# Add this as per Dreamhost advice
-ENV['GEM_PATH'] = '/home/macdougal79/.gems:/usr/lib/ruby/gems/1.8'
+# Add this as per Dreamhost advice and Katherine Pe
+ENV['GEM_PATH'] = '/home/macdougal79/.gems:usr/lib/ruby/gems/1.8/'
 
 # The production environment is meant for finished, "live" apps.
 # Code is not reloaded between requests
