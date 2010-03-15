@@ -29403,3 +29403,8 @@ Rendered votes/_vote (145.7ms)
 Rendered tags/_tag (1.4ms)
 Rendered tags/_tag (0.3ms)
 Completed in 250ms (View: 241, DB: 2) | 200 OK [http://localhost/shares/15-adam-rogers-master-class]
+  [4;36;1mSQL (3.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
