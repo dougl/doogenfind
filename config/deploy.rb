@@ -22,7 +22,7 @@ role :db,  application
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
-# Using Peepcode advice here
+# Using Peepcode advice here from RubyForge
 
 namespace :deploy do
   desc "Restarting mod_rails with restart.txt"

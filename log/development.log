@@ -29448,3 +29448,50 @@ Processing SharesController#new (for 127.0.0.1 at 2010-03-31 06:38:27) [GET]
 Rendering template within layouts/application
 Rendering shares/new
 Completed in 29ms (View: 15, DB: 1) | 200 OK [http://localhost/shares/new]
+
+
+Processing SharesController#index (for 127.0.0.1 at 2010-05-27 06:24:27) [GET]
+  [4;36;1mTag Load (3.8ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM "tags" INNER JOIN taggings ON tags.id = taggings.tag_id INNER JOIN shares ON shares.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Share') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mShare Load (0.3ms)[0m   [0mSELECT * FROM "shares" WHERE (votes_count >= 0) ORDER BY id DESC LIMIT 60[0m
+Rendering template within layouts/application
+Rendering shares/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 14) [0m
+Rendered shares/_share (47.7ms)
+Completed in 159ms (View: 77, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing SharesController#bin (for 127.0.0.1 at 2010-05-27 06:24:35) [GET]
+  [4;35;1mTag Load (0.7ms)[0m   [0mSELECT tags.id, tags.name, COUNT(*) AS count FROM "tags" INNER JOIN taggings ON tags.id = taggings.tag_id INNER JOIN shares ON shares.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Share') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;36;1mShare Load (0.3ms)[0m   [0;1mSELECT * FROM "shares" WHERE (votes_count < 5) ORDER BY id DESC LIMIT 60[0m
+Rendering template within layouts/application
+Rendering shares/index
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 14) [0m
+Rendered shares/_share (11.3ms)
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/shares/bin]
+
+
+Processing SharesController#popular (for 127.0.0.1 at 2010-05-27 06:24:37) [GET]
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM "tags" INNER JOIN taggings ON tags.id = taggings.tag_id INNER JOIN shares ON shares.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Share') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mShare Load (0.1ms)[0m   [0mSELECT * FROM "shares" WHERE (votes_count >= 5) ORDER BY id DESC LIMIT 60[0m
+Rendering template within layouts/application
+Rendering shares/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/shares/popular]
+
+
+Processing SharesController#index (for 127.0.0.1 at 2010-05-27 06:24:39) [GET]
+  [4;36;1mTag Load (0.7ms)[0m   [0;1mSELECT tags.id, tags.name, COUNT(*) AS count FROM "tags" INNER JOIN taggings ON tags.id = taggings.tag_id INNER JOIN shares ON shares.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Share') GROUP BY tags.id, tags.name HAVING COUNT(*) > 0[0m
+  [4;35;1mShare Load (0.2ms)[0m   [0mSELECT * FROM "shares" WHERE (votes_count >= 0) ORDER BY id DESC LIMIT 60[0m
+Rendering template within layouts/application
+Rendering shares/index
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 14) [0m
+Rendered shares/_share (10.6ms)
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/shares]
+  [4;36;1mUser Load (4.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;36;1mUser Load (4.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;36;1mUser Load (3.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'Jim') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "created_at", "updated_at", "hashed_password", "login", "email") VALUES('Jim K.', '135911200.104032091823978', '2011-01-21 15:39:36', '2011-01-21 15:39:36', '2aa293e9a0ed7acbd96684d9d5e719712fea3187', 'Jim', 'jim@somewhere.net')[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'Jack') LIMIT 1[0m
+  [4;35;1mUser Create (0.7ms)[0m   [0mINSERT INTO "users" ("name", "salt", "created_at", "updated_at", "hashed_password", "login", "email") VALUES('Jack B. Nimble', '97821300.775069862697392', '2011-01-21 15:42:46', '2011-01-21 15:42:46', 'cab7032af26e61ac01f61682bc75cdbaef1e24e3', 'Jack', 'jack@somewhere.net')[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
